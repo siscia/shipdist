@@ -105,7 +105,7 @@ cmake $SOURCEDIR                                                 \
       -DEVTGEN_INCLUDE_DIR=$EVTGEN_ROOT/include                  \
       -DEVTGEN_LIBRARY_DIR=$EVTGEN_ROOT/lib                      \
       -DPYTHON_LIBRARY=$PYTHON_ROOT/lib                          \
-      -DPYTHON_INCLUDE_DIR=$PYTHON_ROOT/include/python2.7        \
+      -DPYTHON_INCLUDE_DIR=$PYTHON_ROOT/include/python3.6m/      \
       -DPythia6_LIBRARY_DIR=$PYTHIA6_ROOT/lib                    \
       -DPYTHIA8_DIR=$PYTHIA_ROOT                                 \
       -DPYTHIA8_INCLUDE_DIR=$PYTHIA_ROOT/include                 \
