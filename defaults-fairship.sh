@@ -26,8 +26,9 @@ overrides:
     tag: v6.2.0-alice1
     prefer_system_check: |
       set -e
-      which gfortran || { echo "gfortran missing"; exit 1; }
-      which cc && test -f $(dirname $(which cc))/c++ && printf "#define GCCVER ((__GNUC__ << 16)+(__GNUC_MINOR__ << 8)+(__GNUC_PATCHLEVEL__))\n#if (GCCVER < 0x060000 || GCCVER > 0x090000)\n#error \"System's GCC cannot be used: we need GCC 6.X. We are going to compile our own version.\"\n#endif\n" | cc -xc++ - -c -o /dev/null
+      source /cvmfs/sft.cern.ch/lcg/contrib/gcc/9/x86_64-centos7/setup.sh
+      which $FC || { echo "gfortran missing"; exit 1; }
+      which $CC && test -f $(dirname $(which $CC))/c++ && printf "#define GCCVER ((__GNUC__ << 16)+(__GNUC_MINOR__ << 8)+(__GNUC_PATCHLEVEL__))\n#if (GCCVER < 0x060000 || GCCVER > 0x090100)\n#error \"System's GCC cannot be used: we need GCC 6.X. We are going to compile our own version.\"\n#endif\n" | $CC -xc++ - -c -o /dev/null
   XRootD:
     tag: v4.8.3
   ROOT:
